@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from './Form';
+import List from './List';
 
 class App extends Component {
   constructor(props){
@@ -19,9 +20,12 @@ class App extends Component {
 
   render() {
     return (
-      <div className="siimple-box siimple-box--orange">
-        <h1 className="siimple-box-title">React Todo App</h1>
-        <Form onSubmit={this.handleSubmit.bind(this)}/>
+      <div id="wrapper">
+        <div className="siimple-box siimple--bg-dark siimple--color-white">
+          <h1 className="siimple-box-title">React Todo App</h1>
+          <Form onSubmit={this.handleSubmit.bind(this)}/>
+          <List/>
+        </div>
       </div>
     );
   }
