@@ -16,7 +16,7 @@ class App extends Component {
   handleSubmit(e){
     console.log(e.target.todo.value);
     e.preventDefault();
-    this.state.todo.push({todo: e.target.todo.values});
+    this.state.todo.push({title: e.target.todo.values});
     this.setState({todo: e.target.todo.value});
   }
 
