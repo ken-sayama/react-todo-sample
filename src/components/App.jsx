@@ -4,12 +4,17 @@ import Form from './Form';
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {};
+    this.state = {
+      todo: []
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
   };
 
   handleSubmit(e){
     console.log(e.target.todo.value);
     e.preventDefault();
+    this.state.todo.push({todo: e.target.todo.values});
+    this.setState({todo: e.target.todo.value});
   }
 
   render() {
