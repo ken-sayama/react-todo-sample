@@ -6,18 +6,19 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      todo: [
-        {title: 'タイトル'}
-      ]
+      todo: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   };
 
   handleSubmit(e){
-    console.log(e.target.todo.value);
     e.preventDefault();
-    this.state.todo.push({title: e.target.todo.values});
-    this.setState({todo: e.target.todo.value});
+    // stateの配列に代入を行う
+    this.state.todo.push({title: e.target.title.value});
+    // 追加された配列をsetStateで上書きする
+    this.setState({todo: this.state.todo});
+    // inputのvalueを空に
+    e.target.title.value = '';
   }
 
   render() {
@@ -25,7 +26,7 @@ class App extends Component {
       <div id="wrapper">
         <div className="siimple-box siimple--bg-dark siimple--color-white">
           <h1 className="siimple-box-title">React Todo App</h1>
-          <Form onSubmit={this.handleSubmit.bind(this)}/>
+          <Form onSubmit={this.handleSubmit}/>
           <List datas={this.state.todo}/>
         </div>
       </div>
