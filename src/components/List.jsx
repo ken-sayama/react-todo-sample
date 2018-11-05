@@ -4,11 +4,15 @@ let style = {
   boxSizing: 'border-box'
 };
 
+let width = {
+  width: '50%'
+};
+
 const List = (props) => (
   <ul className="siimple-list" style={style}>
-    <li className="siimple-list-item siimple-list--hover siimple--bg-success siimple--color-white">Item 1</li>
-    <li className="siimple-list-item siimple-list--hover siimple--bg-success siimple--color-white">Item 2</li>
-    <li className="siimple-list-item siimple-list--hover siimple--bg-success siimple--color-white">Item 3</li>
+    {props.datas.map((data) => {
+      return <li className="siimple-list-item siimple-list--hover siimple--bg-success siimple--color-white">{data.title}</li>
+    })}
   </ul>
 );
 
