@@ -27,6 +27,7 @@ class App extends Component {
         <div className="siimple-box siimple--bg-dark siimple--color-white">
           <h1 className="siimple-box-title">React Todo App</h1>
           <Form onSubmit={this.handleSubmit}/>
+          <div className="siimple-rule"></div>
           <List datas={this.state.todo}/>
         </div>
       </div>
